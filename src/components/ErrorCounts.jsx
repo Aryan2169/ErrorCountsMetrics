@@ -320,9 +320,14 @@ const ErrorCounts = () => {
       // Clear the login credentials and logout state
       localStorage.setItem('isLoggedIn', 'false');
       localStorage.setItem('logincred', null);
+      setErrorData(null)
+      setReqhist(null)
+      setHistoryData(null)
+      setHistoryData2(null)
       // Optionally, you might want to clear any other user-related data or state
       // Clearing the login dialog state to show it again when the user logs out
       setIsLoginDialogOpen(!isLoginDialogOpen);
+      window.location.reload();
       // window.location.href = window.location.href;
     } catch (error) {
       console.error('Error during logout:', error);
@@ -350,7 +355,7 @@ const ErrorCounts = () => {
     </tr>
   </thead>
   <tbody>
-    {errorData.map((item, index) => (
+    {errorData?.map((item, index) => (
       <tr key={item.api_id} className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} border-b`}>
         <td
           onClick={() => fetchreqhistoryData(item.api_id, item.name)}
@@ -391,7 +396,7 @@ const ErrorCounts = () => {
     </tr>
   </thead>
   <tbody>
-    {reqHistData.map((item, index) => (
+    {reqHistData?.map((item, index) => (
       <tr key={item.id} className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} border-b last:border-b-0`}>
         <td className='py-1 px-3 text-sm'>{item.created_at}</td>
         <td className='py-1 px-3 text-sm'>{item.api_id}</td>
@@ -427,7 +432,7 @@ const ErrorCounts = () => {
     </tr>
   </thead>
   <tbody>
-    {historyData.map((item, index) => (
+    {historyData?.map((item, index) => (
       <tr key={item.id} className={index % 2 === 0 ? 'bg-gray-50 border-b last:border-b-0' : 'border-b last:border-b-0'}>
         <td className='py-1 px-1 text-sm'>{item.created_at}</td>
         <td className='py-1 px-1 text-sm'>{item.api_id}</td>
@@ -467,7 +472,7 @@ const ErrorCounts = () => {
     </tr>
   </thead>
   <tbody>
-    {historyData2.map((item, index) => (
+    {historyData2?.map((item, index) => (
       <tr key={item.id} className={index % 2 === 0 ? 'bg-gray-50 border-b last:border-b-0' : 'border-b last:border-b-0'}>
         <td className='py-1 px-1 text-sm'>{item.created_at}</td>
         <td className='py-1 px-1 text-sm'>{item.api_id}</td>
