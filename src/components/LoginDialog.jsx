@@ -10,7 +10,7 @@ const LoginDialog = () => {
   const handleLogin = async () => {
     try {
     //   setLoginauth(`${username}:${password}`);
-    setIsLoginDialogOpen(!isLoginDialogOpen);
+      setIsLoginDialogOpen(!isLoginDialogOpen);
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('logincred', `${username}:${password}`);
     } catch (error) {
