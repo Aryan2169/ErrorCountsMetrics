@@ -63,7 +63,7 @@ const ErrorCounts = () => {
     setReqhist(false)
     // console.log(isErrorChecked2)
     try {
-      let requrl=`http://192.168.10.84:8000/get_request_history/${id}`
+      let requrl=`http://43.204.63.158:8000/get_request_history/${id}`
       if (apistartDate && apiendDate){
         requrl+=`?start_datetime=${apistartDate}&end_datetime=${apiendDate}&page=${currentPage}&per_page=25&show_errors=${isErrorChecked? 'true' : 'false'}`
       }
@@ -99,7 +99,7 @@ const ErrorCounts = () => {
     setReqhist(false)
     console.log(isErrorChecked2)
     try {
-      let requrl2=`http://192.168.10.84:8000/get_request_history/by_group/${id}?page=${currentPage}&per_page=25&show_errors=${isErrorChecked2 ? 'true' : 'false'}`
+      let requrl2=`http://43.204.63.158:8000/get_request_history/by_group/${id}?page=${currentPage}&per_page=25&show_errors=${isErrorChecked2 ? 'true' : 'false'}`
       if (apistartDate && apiendDate){
         requrl2+=`&start_datetime=${apistartDate}&end_datetime=${apiendDate}&page=${currentPage}`
       }
@@ -124,7 +124,7 @@ const ErrorCounts = () => {
       setIsErrorChecked(updatedIsErrorChecked)
       // Call the API with the updated isErrorChecked state
       try {
-        let requrl=`http://192.168.10.84:8000/get_request_history/${apiId}?page=${currentPage}&per_page=25&show_errors=${updatedIsErrorChecked ? 'true' : 'false'}`
+        let requrl=`http://43.204.63.158:8000/get_request_history/${apiId}?page=${currentPage}&per_page=25&show_errors=${updatedIsErrorChecked ? 'true' : 'false'}`
       if (apistartDate && apiendDate){
         requrl +=`&start_datetime=${apistartDate}&end_datetime=${apiendDate}`
       }
@@ -150,7 +150,7 @@ const ErrorCounts = () => {
       setIsErrorChecked2(updatedIsErrorChecked2)
       // Call the API with the updated isErrorChecked state
       try {
-        let requrl2=`http://192.168.10.84:8000/get_request_history/by_group/${apigroupId}?page=${currentPage}&per_page=25&show_errors=${updatedIsErrorChecked2 ? 'true' : 'false'}`
+        let requrl2=`http://43.204.63.158:8000/get_request_history/by_group/${apigroupId}?page=${currentPage}&per_page=25&show_errors=${updatedIsErrorChecked2 ? 'true' : 'false'}`
         if (apistartDate && apiendDate){
           requrl2+=`&start_datetime=${apistartDate}&end_datetime=${apiendDate}`
         }
@@ -180,7 +180,7 @@ const ErrorCounts = () => {
     if(afterUEname && afterUEerror && afterUEgrp){
       const fetcherrorData = async () => {
         try {
-          let url='http://192.168.10.84:8000/get_error_counts';
+          let url='http://43.204.63.158:8000/get_error_counts';
           if (apistartDate && apiendDate){
             url+=`?start_datetime=${apistartDate}&end_datetime=${apiendDate}`
           }
@@ -201,7 +201,7 @@ const ErrorCounts = () => {
 
     const fetchreqhistData=async()=>{
       try {
-        let url2=`http://192.168.10.84:8000/get_request_history?page=${currentPage}&per_page=25`;
+        let url2=`http://43.204.63.158:8000/get_request_history?page=${currentPage}&per_page=25`;
         if (apistartDate && apiendDate){
           url2+=`&start_datetime=${apistartDate}&end_datetime=${apiendDate}`
         }
@@ -219,7 +219,7 @@ const ErrorCounts = () => {
 
     const fetchreqhistDataue=async(id,name)=>{
       try {
-        let requrl=`http://192.168.10.84:8000/get_request_history/${id}`
+        let requrl=`http://43.204.63.158:8000/get_request_history/${id}`
         if (apistartDate && apiendDate){
           requrl+=`?start_datetime=${apistartDate}&end_datetime=${apiendDate}&page=${currentPage}&per_page=25&show_errors=${isErrorChecked? 'true' : 'false'}`
         }
@@ -238,7 +238,7 @@ const ErrorCounts = () => {
 
     const fetchreqhistoryDatagroupue=async(id,name)=>{
       try {
-        let requrl2=`http://192.168.10.84:8000/get_request_history/by_group/${id}?page=${currentPage}&per_page=25&show_errors=${isErrorChecked2 ? 'true' : 'false'}`
+        let requrl2=`http://43.204.63.158:8000/get_request_history/by_group/${id}?page=${currentPage}&per_page=25&show_errors=${isErrorChecked2 ? 'true' : 'false'}`
         if (apistartDate && apiendDate){
           requrl2+=`&start_datetime=${apistartDate}&end_datetime=${apiendDate}&page=${currentPage}`
         }
